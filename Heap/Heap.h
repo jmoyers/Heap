@@ -8,12 +8,9 @@ using std::vector;
 using std::swap;
 
 /* 
-
-Parent of node at k is at k/2
-Children of node at k are at 2k and 2k+1 (integer div)
-
+* Parent of node at k is at k/2
+* Children of node at k are at 2k and 2k+1 (integer div)
 */
-
 template <class T>
 class Heap
 {
@@ -42,7 +39,6 @@ class Heap
 
   void sink(size_t index)
   {
-    cout << "Sink " << index << endl;
     size_t c1 = index * 2;
     size_t c2 = index * 2 + 1;
     size_t b = c1;
@@ -78,7 +74,6 @@ class Heap
     
     while (next != index && at(index) > at(next))
     {
-      cout << "Swim " << index << " to " << next << endl;
       swap(m_storage[index], m_storage[next]);
       index = next;
       next = next / 2;
